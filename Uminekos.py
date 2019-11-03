@@ -7,7 +7,6 @@ pygame.init()
 
 window.blit(bg, (0, 0))
 
-
 playing = True
 
 while playing:
@@ -18,4 +17,5 @@ while playing:
         if event.type == pygame.KEYDOWN and keypress(event) == "escape":
             playing = False
         if event.type == pygame.MOUSEBUTTONDOWN:
-            gunshot()
+            gunshot(event.pos[0], event.pos[1])
+            print(event)

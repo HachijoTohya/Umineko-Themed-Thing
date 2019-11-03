@@ -1,4 +1,4 @@
 import pygame
 pygame.init()
 
-volume = 0.25
+volume = 0.10
