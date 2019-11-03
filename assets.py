@@ -11,7 +11,7 @@ bg = pygame.image.load("images/kanshan.jpg").convert()
 shot = pygame.mixer.Sound("sounds/Gunshot.wav")
 
 def gunshot(bulx, buly):
-    bullet = pygame.Rect(bulx, buly, 80, 80)
+    bullet = pygame.Rect((bulx - 40), (buly - 40), 80, 80)
     pygame.draw.rect(window, red, bullet)
     shot.set_volume(volume)
     shot.play()
