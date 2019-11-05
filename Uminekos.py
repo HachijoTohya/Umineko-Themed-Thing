@@ -5,11 +5,12 @@ import time
 import random
 pygame.init()
 
-window.blit(bg, (0, 0))
+
 
 playing = True
 
 while playing:
+    win.blit(bg, (0, 0))
     pygame.display.update()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -17,5 +18,5 @@ while playing:
         if event.type == pygame.KEYDOWN and keypress(event) == "escape":
             playing = False
         if event.type == pygame.MOUSEBUTTONDOWN:
-            gunshot(event.pos[0], event.pos[1])
+            gunshot(event.pos)
             print(event)
