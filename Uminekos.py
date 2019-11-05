@@ -5,12 +5,14 @@ import time
 import random
 pygame.init()
 
-
+pygame.mixer.set_num_channels(16)
 
 playing = True
 
+
 while playing:
     win.blit(bg, (0, 0))
+    spawnenemy()
     pygame.display.update()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
