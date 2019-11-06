@@ -6,19 +6,35 @@ import random
 pygame.init()
 
 pygame.mixer.set_num_channels(16)
-
 playing = True
 
 
 while playing:
     win.blit(bg, (0, 0))
-    spawnenemy()
     pygame.display.update()
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-           playing = False
-        if event.type == pygame.KEYDOWN and keypress(event) == "escape":
-            playing = False
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            gunshot(event.pos)
-            print(event)
+    ding = spawnenemy()
+    while win.get_rect(top=0).contains(ding) and playing:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                playing = False
+            if event.type == pygame.KEYDOWN and keypress(event) == "escape":
+                playing = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if ding.colliderect(gunshot(event.pos)):
+                    win.blit(bg, (0, 0))
+                    pygame.display.update()
+                    ding = spawnenemy()
+                    print("Hit!")
+                else:
+                    win.blit(bg, (0, 0))
+                    pygame.display.update()
+                    ding = spawnenemy()
+
+
+
+
+
+
+
+
+
