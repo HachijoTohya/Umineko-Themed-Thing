@@ -12,7 +12,7 @@ shot = pygame.mixer.Sound("sounds/Gunshot.wav")
 buleff = pygame.image.load("images/shot.png").convert()
 enemy = pygame.image.load("images/furudo.png").convert()
 idiotnoise = pygame.mixer.Sound("sounds/Ahaha.wav")
-
+counter = pygame.font.SysFont(name="franklingothicmedium", size=42)
 
 
 
@@ -41,6 +41,8 @@ def spawnenemy():
     return hitbox
 
 
+def scoreboard(hitcounter):
+    return counter.render(str(hitcounter), True, (255, 0, 0))
 
 
 

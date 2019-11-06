@@ -7,6 +7,7 @@ pygame.init()
 
 pygame.mixer.set_num_channels(16)
 playing = True
+hitcounter = 0
 
 
 while playing:
@@ -22,13 +23,16 @@ while playing:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if ding.colliderect(gunshot(event.pos)):
                     win.blit(bg, (0, 0))
+                    hitcounter += 1
+                    win.blit(scoreboard(hitcounter), (0, 0))
                     pygame.display.update()
                     ding = spawnenemy()
                     print("Hit!")
                 else:
                     win.blit(bg, (0, 0))
+                    win.blit(enemy, ding)
+                    win.blit(scoreboard(hitcounter), (0, 0))
                     pygame.display.update()
-                    ding = spawnenemy()
 
 
 
