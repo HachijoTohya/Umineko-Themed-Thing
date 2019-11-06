@@ -3,14 +3,14 @@ from config import *
 import random
 pygame.init()
 
-icon = pygame.image.load("images/2.ico")
+icon = pygame.image.load("Images/2.ico")
 pygame.display.set_icon(icon)
 pygame.display.set_caption("Umineko Themed Thing")
 win = pygame.display.set_mode(size=(1600, 900))
-bg = pygame.image.load("images/kanshan.jpg").convert()
+bg = pygame.image.load("Images/kanshan.jpg").convert()
 shot = pygame.mixer.Sound("sounds/Gunshot.wav")
-buleff = pygame.image.load("images/shot.png").convert()
-enemy = pygame.image.load("images/furudo.png").convert()
+buleff = pygame.image.load("Images/shot.png").convert()
+enemy = pygame.image.load("Images/furudo.png").convert()
 idiotnoise = pygame.mixer.Sound("sounds/Ahaha.wav")
 counter = pygame.font.SysFont(name="franklingothicmedium", size=42)
 

@@ -33,12 +33,3 @@ while playing:
                     win.blit(enemy, ding)
                     win.blit(scoreboard(hitcounter), (0, 0))
                     pygame.display.update()
-
-
-
-
-
-
-
-
-
